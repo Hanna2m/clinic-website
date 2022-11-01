@@ -1,3 +1,14 @@
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Nunito', sans-serif;
+  line-height: 1.5;
+  color: $dark-color;
+  background-color: rgba($primary-color, 0.1);
+  user-select: none;
+}
 .container {
   width: $container-lg;
   margin: 0 auto;

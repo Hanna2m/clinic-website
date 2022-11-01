@@ -9,6 +9,21 @@
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  line-height: 1.5;
+  color: rgba(12, 3, 27, 0.7);
+  background-color: rgba(48, 88, 236, 0.1);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
 .container {
   width: 82%;
   margin: 0 auto;
@@ -84,5 +99,79 @@ section p {
 @media screen and (max-width: 600px) {
   .section > p {
     width: 90%;
+  }
+}
+nav {
+  width: 100vw;
+  height: 5rem;
+  position: fixed;
+  z-index: 10;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, #3058ec, #4cc9f0);
+  color: #ffffff;
+  box-shadow: 0 1rem 1rem rgba(12, 3, 27, 0.1);
+}
+nav h1, nav h2, nav h3, nav h4, nav h5 {
+  color: #ffffff;
+}
+nav .container {
+  display: flex;
+  justify-content: space-between;
+}
+nav .container ul {
+  display: flex;
+  gap: 3rem;
+  align-items: center;
+}
+nav .container .nav-items_mobile {
+  display: none;
+}
+nav .container button {
+  display: none;
+}
+nav .container a {
+  color: #ffffff;
+  font-weight: 400;
+  font-size: 0.9rem;
+}
+nav .container .nav-logo {
+  color: #ffffff;
+  margin-top: auto;
+  margin-bottom: auto;
+}
+
+@media screen and (max-width: 1024px) {
+  nav .container button {
+    display: inline-block;
+    background: transparent;
+    font-size: 2rem;
+    cursor: pointer;
+  }
+  nav .container .nav-items_mobile.close-menu {
+    display: block;
+  }
+  nav .container ul {
+    display: none;
+    position: fixed;
+    right: 5%;
+    top: 5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0;
+  }
+  nav .container ul li {
+    width: 100%;
+  }
+  nav .container ul li a {
+    color: #ffffff;
+    height: 100%;
+    display: block;
+    padding: 1.5rem 2rem;
+    border-radius: 0;
+    background: linear-gradient(#4cc9f0, #14b8eb);
+  }
+  nav .container ul li a.btn {
+    background: #f72585;
   }
 }/*# sourceMappingURL=main.css.map */
