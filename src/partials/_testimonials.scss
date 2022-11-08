@@ -1,0 +1,44 @@
+.container{
+  width: $container-lg;
+
+  .mySwiper {
+    article{
+      @include gradientBackground;
+      padding: 1.5rem 2rem;
+      border-radius: 1rem;
+      cursor: default;
+      font-size: 0.9rem;
+
+      .patient {
+        display: flex;
+        gap: 1rem;
+        margin-top: 1.5rem;
+        align-items: center;
+
+        .avatar {
+          overflow: hidden;
+          width: 2.5rem;
+          aspect-ratio: 1/1;
+          border-radius: 50%;
+        }
+      }
+    }
+    .swiper-pagination {
+      position: relative;
+      margin-top: 2rem;
+    }
+    .swiper-pagination-bullet {
+      background: $primary-color;
+    }
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .container {
+    .mySwiper {
+      article {
+        padding: 1.5rem;
+      }
+    }
+  }
+}
