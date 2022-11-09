@@ -18,11 +18,11 @@
           class="nav-items_mobile"
           :class="this.showMobileMenu ? 'open-menu' : 'close-menu'"
         >
-          <li><a href="#">Home</a></li>
-          <li><a href="#services">Services</a></li>
-          <li><a href="#specialists">Specialists</a></li>
-          <li><a href="#testimonials">Testimonials</a></li>
-          <li><a class="btn" href="#appointment">Make Appointment</a></li>
+          <li @click="showMenu"><a href="#">Home</a></li>
+          <li @click="showMenu"><a href="#services">Services</a></li>
+          <li @click="showMenu"><a href="#specialists">Specialists</a></li>
+          <li @click="showMenu"><a href="#testimonials">Testimonials</a></li>
+          <li @click="showMenu"><a class="btn" href="#appointment">Make Appointment</a></li>
         </ul>
 
         <button
@@ -418,15 +418,21 @@
           </article>
         </div>
 
-        <form action="">
+        <form action="https://formspree.io/f/mlevalaa" method="POST">
           <div class="form-group">
             <label for="name">Name</label>
-            <input v-model="name" type="text" placeholder="Enter Your Name" id="name" />
+            <input
+              v-model="name"
+              type="text"
+              placeholder="Enter Your Name"
+              name="name"
+            />
           </div>
           <div class="form-group">
             <label for="email">Email</label>
             <input
               type="email"
+              name="email"
               v-model="email"
               placeholder="Enter Your Email"
               required
@@ -435,16 +441,26 @@
           </div>
           <div class="form-group">
             <label for="phone">Phone</label>
-            <input v-model="phone" type="number" placeholder="Enter Your Phone" id="phone" />
+            <input
+              v-model="phone"
+              type="number"
+              placeholder="Enter Your Phone"
+              name="phone"
+            />
           </div>
           <div class="form-group">
             <label for="date">Date</label>
-            <input v-model="date" type="date" placeholder="Select a Date" id="date" />
+            <input
+              v-model="date"
+              type="date"
+              placeholder="Select a Date"
+              name="date"
+            />
           </div>
           <div class="form-group">
             <label for="department">Department</label>
-            <select v-model="selectedDepartment" id="department">
-              <option selected >General</option>
+            <select v-model="selectedDepartment" name="department" required>
+              <option selected>General</option>
               <option>Pediatrics</option>
               <option>Dermatology</option>
               <option>Orthopedist</option>
@@ -452,24 +468,81 @@
           </div>
           <div class="form-group">
             <label for="doctor">Doctor</label>
-            <select v-model="selectedDoctor" id="doctor">
+            <select v-model="selectedDoctor" name="doctor">
               <option disabled value="">Please Select a Doctor</option>
-              <option v-for="item in doctorsFilter"
+              <option
+                v-for="item in doctorsFilter"
                 :key="item.id"
-                :value="item.name">
-                {{item.name}}
+                :value="item.name"
+              >
+                {{ item.name }}
               </option>
-             
             </select>
           </div>
           <div class="form-group">
             <label for="msg">Message</label>
-            <textarea v-model="message" type="text" placeholder="Additional Message" id="msg" rows="6"/>
+            <textarea
+              v-model="message"
+              type="text"
+              placeholder="Additional Message"
+              rows="6"
+              name="message"
+            />
           </div>
-          <input type="submit" value="Submit" class="btn-primary">
+          <input type="submit" value="Submit" class="btn-primary" />
         </form>
       </div>
     </section>
+
+    <footer>
+      <div class="container">
+        <article>
+          <a href="#" class="footer-logo"><h3>Your Doctor</h3></a>
+          <div>
+            <i class="bx bx-phone" />
+            <p>+4912345678</p>
+          </div>
+          <div>
+            <i class="bx bx-envelope" />
+            <p>support@yourdoctor.com</p>
+          </div>
+        </article>
+        <article>
+          <h3>Support</h3>
+          <a href="#">Privacy Policy</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Purchasing Policy</a>
+          <a href="#">Terms & Conditions</a>
+        </article>
+        <article>
+          <h3>Menu</h3>
+          <a href="#">Home</a>
+          <a href="#services">Services</a>
+          <a href="#specialists">Specialists</a>
+          <a href="#testimonials">Testimonials</a>
+          <a href="#appointment" class="btn-primary">Get an Appointment</a>
+        </article>
+        <article>
+          <h3>Contact Us</h3>
+          <p>Press</p>
+          <p>FAQs</p>
+          <div class="footer-socials">
+            <a href="https://linkedin.com" target="_blank"
+              ><i class="bx bxl-linkedin"
+            /></a>
+            <a href="https://twitter.com" target="_blank"
+              ><i class="bx bxl-twitter"
+            /></a>
+            <a href="https://facebook.com" target="_blank"
+              ><i class="bx bxl-facebook"
+            /></a>
+          </div>
+        </article>
+      </div>
+      <div class="copyright">
+        <p>&copy; Copyright Your Doctor. All Rights Reserved</p>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -500,74 +573,73 @@ export default {
       name: '',
       phone: '',
       email: '',
-      selectedDepartment:'',
-      selectedDoctor:'',
+      selectedDepartment: 'General',
+      selectedDoctor: '',
       message: '',
-
       doctors: [
         {
           id: 1,
-          department: "General",
-          name: 'Dr. Michelle Morrone'
+          department: 'General',
+          name: 'Dr. Michelle Morrone',
         },
         {
           id: 2,
-          department: "General",
-          name: 'Dr. Ann Litz'
+          department: 'General',
+          name: 'Dr. Ann Litz',
         },
         {
           id: 3,
-          department: "General",
-          name: 'Dr. Mick Hussle'
+          department: 'General',
+          name: 'Dr. Mick Hussle',
         },
         {
           id: 4,
-          department: "Pediatrics",
-          name: 'Dr. Annika Smith'
+          department: 'Pediatrics',
+          name: 'Dr. Annika Smith',
         },
         {
           id: 5,
-          department: "Pediatrics",
-          name: 'Dr. Luca Latto'
+          department: 'Pediatrics',
+          name: 'Dr. Luca Latto',
         },
 
         {
           id: 6,
-          department: "Dermatology",
-          name: 'Dr. Susanna Smith'
+          department: 'Dermatology',
+          name: 'Dr. Susanna Smith',
         },
         {
           id: 6,
-          department: "Dermatology",
-          name: 'Dr. Ricardo Gonsales'
+          department: 'Dermatology',
+          name: 'Dr. Ricardo Gonsales',
         },
         {
           id: 6,
-          department: "Orthopedist",
-          name: 'Dr. Ivan Moroz'
+          department: 'Orthopedist',
+          name: 'Dr. Ivan Moroz',
         },
         {
           id: 6,
-          department: "Orthopedist",
-          name: 'Dr. Rebecca Lutz'
+          department: 'Orthopedist',
+          name: 'Dr. Rebecca Lutz',
         },
-      ]
+      ],
     };
   },
 
   computed: {
-    doctorsFilter: function() {
-      const department = this.selectedDepartment
-      return this.doctors.filter(function(d) {
-        return d.department == department
-      })
-    }
+    doctorsFilter: function () {
+      const department = this.selectedDepartment;
+      return this.doctors.filter(function (d) {
+        return d.department == department;
+      });
+    },
   },
 
   methods: {
     showMenu() {
       this.showMobileMenu = !this.showMobileMenu;
-    },
+    }
   },
 };
 </script>
