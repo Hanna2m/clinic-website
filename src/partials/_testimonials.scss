@@ -9,6 +9,11 @@
       cursor: default;
       font-size: 0.9rem;
 
+      p {
+        width: 100%;
+        text-align: left;
+      }
+
       .patient {
         display: flex;
         gap: 1rem;

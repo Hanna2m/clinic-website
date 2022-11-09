@@ -281,6 +281,10 @@ header .header-content p {
 #services .container article div h4 {
   margin-bottom: 1rem;
 }
+#services .container article div p {
+  width: 100%;
+  text-align: left;
+}
 
 @media screen and (max-width: 1024px) {
   #services .container {
@@ -412,6 +416,10 @@ header .header-content p {
 .container .mySwiper article h1, .container .mySwiper article h2, .container .mySwiper article h3, .container .mySwiper article h4, .container .mySwiper article h5 {
   color: #ffffff;
 }
+.container .mySwiper article p {
+  width: 100%;
+  text-align: left;
+}
 .container .mySwiper article .patient {
   display: flex;
   gap: 1rem;
@@ -436,4 +444,57 @@ header .header-content p {
   .container .mySwiper article {
     padding: 1.5rem;
   }
+}
+#appointment .container {
+  display: grid;
+  grid-template-columns: 47% 47%;
+  gap: 6%;
+}
+#appointment .container .info p {
+  margin: 0.5rem 0 2rem;
+  width: 100%;
+  text-align: left;
+}
+#appointment .container .info article {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+#appointment .container .info article p {
+  font-size: smaller;
+}
+#appointment .container .info .info-icon {
+  display: flex;
+  height: -webkit-fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  aspect-ratio: 1/1;
+  padding: 0.8rem;
+  border-radius: 50%;
+  background: #f72585;
+  color: #ffffff;
+  font-size: 1.2rem;
+}
+#appointment .container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.4rem;
+}
+#appointment .container form .form-group label {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+#appointment .container form .form-group input,
+#appointment .container form .form-group textarea, #appointment .container form .form-group select {
+  display: flex;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  resize: none;
+  border-radius: 0.4rem;
+  padding: 0.85rem 1rem;
+  background: #ffffff;
 }/*# sourceMappingURL=main.css.map */
